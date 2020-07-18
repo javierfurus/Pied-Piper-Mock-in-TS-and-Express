@@ -3,18 +3,9 @@ const path = require('path');
 const app = express();
 const handlebars = require('express-handlebars');
 const router = express.Router();
-// Knex options
-const options = {
-  client: 'mysql',
-  connection: {
-    host: 'localhost',
-    user: '****',
-    password: '*****',
-    database: '*****'
-  }
-};
-// Import Knex
-const knex = require('knex')(options);
+// Setup knex
+const knexfile = require('./knexfile').development;
+const knex = require('knex')(knexfile);
 // Set up handlebars
 app.engine(
   'hbs',
