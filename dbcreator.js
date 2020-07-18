@@ -78,7 +78,7 @@ knex.schema.hasTable('aboutCardContentFiller').then((exists) => {
       table.string('img');
       table.string('name');
       table.string('title');
-      table.string('text', 1000); // Long text is heavier
+      table.string('text', 1000);
     }).then(() => console.log('table created'))
       .catch((err) => { console.log(err); throw err; })
       .finally(() => {
