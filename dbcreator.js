@@ -1,14 +1,5 @@
-const options = {
-  client: 'mysql',
-  connection: {
-    host: '****',
-    user: '***',
-    password: '*****',
-    database: 'cardsForHome'
-  }
-};
-
-const knex = require('knex')(options);
+const knexfile = require('./knexfile').development;
+const knex = require('knex')(knexfile);
 
 // cardContentFiller table. Table for the cards on the index page
 knex.schema.hasTable('cardContentFiller').then((exists) => {
@@ -78,7 +69,7 @@ knex.schema.hasTable('aboutCardContentFiller').then((exists) => {
       table.string('img');
       table.string('name');
       table.string('title');
-      table.string('text', 1000);
+      table.string('text', 1000); // Long text is heavier
     }).then(() => console.log('table created'))
       .catch((err) => { console.log(err); throw err; })
       .finally(() => {
