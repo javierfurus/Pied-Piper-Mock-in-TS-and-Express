@@ -1,0 +1,26 @@
+{
+  "name": "siliconvalleyinexpress",
+  "version": "1.0.0",
+  "description": "Simple implementation of my Silicon Valley site in Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "knex": "knex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierfurus/valleyinexpress.git"
+  },
+  "author": "Javier Furus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javierfurus/valleyinexpress/issues"
+  },
+  "homepage": "https://github.com/javierfurus/valleyinexpress#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.2",
+    "mysql": "^2.18.1"
+  }
+}
