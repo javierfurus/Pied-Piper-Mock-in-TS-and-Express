@@ -19,36 +19,30 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 // Routers
-router.get('/', function (req, res) {
+router.get('/', async (req, res) => {
   // Read every row data in from cardContentFiller
-  knex
-    .from('cardContentFiller')
-    .select('*')
-    .then((rows) => {
-      console.log('Data acquired successfully!');
-      // Render index and use rows from cardContentFiller
-      res.render('index', { cardsContent: rows });
-    })
-    .catch((err) => {
-      console.log(err);
-      throw err;
-    });
+  try {
+    const rows = await knex.from('cardContentFiller').select('*');
+    console.log('Data acquired successfully!');
+    // Render index and use rows from cardContentFiller
+    res.render('index', { cardsContent: rows });
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
 });
 
-router.get('/about', function (req, res) {
+router.get('/about', async (req, res) => {
   // Read every row data in from aboutCardContentFiller
-  knex
-    .from('aboutCardContentFiller')
-    .select('*')
-    .then((rows) => {
-      console.log('Data acquired successfully!');
-      // Render index and use rows from aboutCardContentFiller
-      res.render('about', { cardsContent: rows });
-    })
-    .catch((err) => {
-      console.log(err);
-      throw err;
-    });
+  try {
+    const rows = await knex.from('aboutCardContentFiller').select('*');
+    console.log('Data acquired successfully!');
+    // Render index and use rows from aboutCardContentFiller
+    res.render('about', { cardsContent: rows });
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
 });
 
 router.get('/join', function (req, res) {
