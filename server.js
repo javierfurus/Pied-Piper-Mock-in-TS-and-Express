@@ -2,10 +2,6 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const handlebars = require('express-handlebars');
-const router = express.Router();
-// Setup knex
-const knexfile = require('./knexfile').development;
-const knex = require('knex')(knexfile);
 // Set up handlebars
 app.engine(
   'hbs',
@@ -19,36 +15,18 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 // Routers
-router.get('/', async (req, res) => {
-  // Read every row data in from cardContentFiller
-  try {
-    const rows = await knex.from('cardContentFiller').select('*');
-    console.log('Data acquired successfully!');
-    // Render index and use rows from cardContentFiller
-    res.render('index', { cardsContent: rows });
-  } catch (err) {
-    console.log(err);
-    throw err;
-  }
-});
+const indexRouter = require('./index');
+app.use('/index', indexRouter);
 
-router.get('/about', async (req, res) => {
-  // Read every row data in from aboutCardContentFiller
-  try {
-    const rows = await knex.from('aboutCardContentFiller').select('*');
-    console.log('Data acquired successfully!');
-    // Render index and use rows from aboutCardContentFiller
-    res.render('about', { cardsContent: rows });
-  } catch (err) {
-    console.log(err);
-    throw err;
-  }
-});
+const aboutRouter = require('./about');
+app.use('/about', aboutRouter);
 
-router.get('/join', function (req, res) {
-  res.render('join');
+const joinRouter = require('./join');
+app.use('/join', joinRouter);
+
+app.get('/', function (req, res) {
+  res.redirect('/index');
 });
-app.use('/', router);
 app.listen(3000, function () {
   console.log('Valley app listening on port 3000!');
 });
