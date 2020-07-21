@@ -17,6 +17,9 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 // Routers
 app.use(router);
+app.get('/', function (req, res) {
+  res.redirect('/index');
+});
 app.listen(3000, function () {
   console.log('Valley app listening on port 3000!');
 });
