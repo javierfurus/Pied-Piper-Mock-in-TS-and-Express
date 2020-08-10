@@ -21,7 +21,7 @@ services:
   siliconvalley-express:
     container_name: siliconvalley-express
     build:
-      context: ./
+      context: ./back
       dockerfile: Dockerfile.development
     expose:
       - "3000"
@@ -30,12 +30,27 @@ services:
     depends_on:
       - siliconvalley-express-db
     volumes:
-      - "./:/usr/src/app"
+      - "./back/:/usr/src/app"
       - "~/.ssh:/root/.ssh"
     networks:
       inner:
         aliases:
           - siliconvalley-express
+  siliconvalley-frontend:
+    container_name: siliconvalley-frontend
+    build:
+      context: ./front
+      dockerfile: Dockerfile.frontend
+    expose:
+      - "4000"
+    ports:
+      - "4000:4000"
+    volumes:
+      - "./front:/usr/src/app"
+    networks:
+      inner:
+        aliases:
+          - siliconvalley-frontend
 networks:
   inner: {}
 volumes:
