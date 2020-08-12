@@ -11,7 +11,7 @@ export default {
     try {
       const rows = await knex.from('cardContentFiller').select('*');
       // Render index and use rows from cardContentFiller
-      res.json(rows);
+      res.render('home', { cardsContent: rows });
     } catch (err) {
       console.error(err);
       res.status(500);

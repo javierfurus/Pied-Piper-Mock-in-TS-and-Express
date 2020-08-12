@@ -10,6 +10,9 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
   mode: process.env.NODE_ENV || 'development',
   target: 'node',
+  node: {
+    __dirname: true
+  },
   externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, 'build'),

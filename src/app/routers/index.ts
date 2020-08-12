@@ -5,7 +5,7 @@ import {router as join} from './join';
 const router = express.Router({ mergeParams: true });
 const routes = [
   {
-    path: '/home',
+    path: '/',
     router: home
   },
   {

@@ -13,7 +13,7 @@ export default {
       const rows = await knex.from('aboutCardContentFiller').select('*');
       console.log('Data acquired successfully!');
       // Render about and use rows from aboutCardContentFiller
-      res.json(rows);
+      res.render('about', { cardsContent: rows });
     } catch (err) {
       console.log(err);
       throw err;

@@ -45,6 +45,17 @@
           }
         }
       }
+    },
+    "/join": {
+      "get": {
+        "summary": "Hello World",
+        "operationId": "helloWorld",
+        "responses": {
+          "200": {
+            "description": "Return with Hello World message"
+          }
+        }
+      }
     }
   }
 }

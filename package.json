@@ -6,7 +6,7 @@
   "description": "Silicon Valley in Express",
   "scripts": {
     "build": "webpack",
-    "dev": "concurrently \"webpack -w --display-error-details\" \"nodemon build/bundle.js\"",
+    "dev": "concurrently \"webpack -w --display-error-details\" \"nodemon build/bundle.js\" \"--include-path ./src/app/views\"",
     "start": "node build/bundle.js",
     "db:migrate": "node ./node_modules/.bin/knex migrate:up --knexfile=config/database.json",
     "db:rollback": "node ./node_modules/.bin/knex migrate:rollback --knexfile=config/database.json",
@@ -34,9 +34,6 @@
     "express-handlebars": "^5.1.0",
     "file-loader": "^6.0.0",
     "handlebars": "^4.7.6",
-    "handlebars-loader": "^1.7.1",
-    "handlebars-template-loader": "^1.0.0",
-    "handlebars-webpack-plugin": "^1.8.1",
     "html-webpack-plugin": "^4.3.0",
     "image-webpack-loader": "^6.0.0",
     "imagemin-mozjpeg": "^9.0.0",
