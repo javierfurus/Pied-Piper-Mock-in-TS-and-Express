@@ -141,7 +141,7 @@ eval("// Update with your config settings.\n\nmodule.exports = {\n  development:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nexports.__esModule = true;\nvar express = __webpack_require__(/*! express */ \"express\");\nvar about_1 = __webpack_require__(/*! ../controllers/about */ \"./src/app/controllers/about.ts\");\nvar router = express.Router({ mergeParams: true });\nexports.router = router;\nrouter.use(about_1[\"default\"].authorization);\nrouter.get('/', about_1[\"default\"].index);\n\n\n//# sourceURL=webpack:///./src/app/routers/about.ts?");
+eval("\nexports.__esModule = true;\nexports.router = void 0;\nvar express = __webpack_require__(/*! express */ \"express\");\nvar about_1 = __webpack_require__(/*! ../controllers/about */ \"./src/app/controllers/about.ts\");\nvar router = express.Router({ mergeParams: true });\nexports.router = router;\nrouter.use(about_1[\"default\"].authorization);\nrouter.get('/', about_1[\"default\"].index);\n\n\n//# sourceURL=webpack:///./src/app/routers/about.ts?");
 
 /***/ }),
 
@@ -153,7 +153,7 @@ eval("\nexports.__esModule = true;\nvar express = __webpack_require__(/*! expres
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nexports.__esModule = true;\nvar express = __webpack_require__(/*! express */ \"express\");\nvar home_1 = __webpack_require__(/*! ../controllers/home */ \"./src/app/controllers/home.ts\");\nvar router = express.Router({ mergeParams: true });\nexports.router = router;\nrouter.use(home_1[\"default\"].authorization);\nrouter.get('/', home_1[\"default\"].index);\n\n\n//# sourceURL=webpack:///./src/app/routers/home.ts?");
+eval("\nexports.__esModule = true;\nexports.router = void 0;\nvar express = __webpack_require__(/*! express */ \"express\");\nvar home_1 = __webpack_require__(/*! ../controllers/home */ \"./src/app/controllers/home.ts\");\nvar router = express.Router({ mergeParams: true });\nexports.router = router;\nrouter.use(home_1[\"default\"].authorization);\nrouter.get('/', home_1[\"default\"].index);\n\n\n//# sourceURL=webpack:///./src/app/routers/home.ts?");
 
 /***/ }),
 
@@ -177,7 +177,7 @@ eval("\nexports.__esModule = true;\nvar express = __webpack_require__(/*! expres
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nexports.__esModule = true;\nvar express = __webpack_require__(/*! express */ \"express\");\nvar join_1 = __webpack_require__(/*! ../controllers/join */ \"./src/app/controllers/join.ts\");\nvar router = express.Router({ mergeParams: true });\nexports.router = router;\nrouter.use(join_1[\"default\"].authorization);\nrouter.get('/', join_1[\"default\"].index);\n\n\n//# sourceURL=webpack:///./src/app/routers/join.ts?");
+eval("\nexports.__esModule = true;\nexports.router = void 0;\nvar express = __webpack_require__(/*! express */ \"express\");\nvar join_1 = __webpack_require__(/*! ../controllers/join */ \"./src/app/controllers/join.ts\");\nvar router = express.Router({ mergeParams: true });\nexports.router = router;\nrouter.use(join_1[\"default\"].authorization);\nrouter.get('/', join_1[\"default\"].index);\n\n\n//# sourceURL=webpack:///./src/app/routers/join.ts?");
 
 /***/ }),
 
