@@ -1,0 +1,61 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Silicon Valley TS"
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Hello World",
+        "operationId": "helloWorld",
+        "responses": {
+          "200": {
+            "description": "Return with Hello World message"
+          }
+        }
+      }
+    },
+    "/home": {
+      "get": {
+        "summary": "Hello World",
+        "operationId": "helloWorld",
+        "responses": {
+          "200": {
+            "description": "Return with Hello World message"
+          }
+        }
+      }
+    },
+    "/about": {
+      "get": {
+        "summary": "Hello World",
+        "operationId": "helloWorld",
+        "responses": {
+          "200": {
+            "description": "Return with Hello World message"
+          }
+        }
+      }
+    },
+    "/join": {
+      "get": {
+        "summary": "Hello World",
+        "operationId": "helloWorld",
+        "responses": {
+          "200": {
+            "description": "Return with Hello World message"
+          }
+        }
+      }
+    }
+  }
+}

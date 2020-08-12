@@ -1,11 +1,11 @@
-const express = require('express');
-const about = require('./about');
-const home = require('./home');
-const join = require('./join');
+import * as express from 'express';
+import {router as about} from './about';
+import {router as home} from './home';
+import {router as join} from './join';
 const router = express.Router({ mergeParams: true });
 const routes = [
   {
-    path: '/home',
+    path: '/',
     router: home
   },
   {
@@ -18,4 +18,4 @@ const routes = [
   }
 ];
 routes.forEach(r => router.use(r.path, r.router));
-module.exports = router;
+export default router;

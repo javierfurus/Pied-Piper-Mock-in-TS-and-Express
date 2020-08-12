@@ -1,8 +1,12 @@
 
 const knexfile = require('../knexfile').development;
 const knex = require('knex')(knexfile);
+import { Request, Response, NextFunction } from 'express';
 
-module.exports = {
+export default {
+  authorization: (req: Request, res: Response, next: NextFunction) => {
+    next();
+  },
   index: async (req, res) => {
     // Read every row data in from aboutCardContentFiller
     try {

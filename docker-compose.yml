@@ -1,0 +1,42 @@
+version: "2"
+services:
+  siliconvalley-express-db:
+    container_name: siliconvalley-express-db
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: "database"
+      MYSQL_USER: "database"
+      MYSQL_PASSWORD: "toor"
+      MYSQL_ROOT_PASSWORD: "toor"
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+    volumes:
+      - siliconvalley-express-db-data:/var/lib/mysql
+    networks:
+      inner:
+        aliases:
+          - siliconvalley-express-db
+  siliconvalley-express:
+    container_name: siliconvalley-express
+    build:
+      context: ./
+      dockerfile: Dockerfile.development
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - siliconvalley-express-db
+    volumes:
+      - "./:/usr/src/app"
+      - "~/.ssh:/root/.ssh"
+    networks:
+      inner:
+        aliases:
+          - siliconvalley-express
+networks:
+  inner: {}
+volumes:
+  siliconvalley-express-db-data: {}

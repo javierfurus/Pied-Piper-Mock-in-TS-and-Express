@@ -1,12 +1,13 @@
 // Update with your config settings.
+
 module.exports = {
   development: {
     client: 'mysql',
     connection: {
-      host: '*******',
-      user: '*****',
-      password: '******',
-      database: '******'
+      host: 'siliconvalley-express-db',
+      user: 'root',
+      password: 'toor',
+      database: 'database'
     },
     migrations: {
       tableName: 'migrations',
