@@ -15,7 +15,6 @@ export default {
     } catch (err) {
       console.error(err);
       res.status(500);
-      throw err;
   }
 }
 };

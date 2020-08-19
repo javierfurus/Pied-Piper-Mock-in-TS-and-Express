@@ -24,7 +24,7 @@ services:
       context: ./
       dockerfile: Dockerfile.development
     expose:
-      - "3000"
+      - 3000
     ports:
       - "3000:3000"
     depends_on:
@@ -36,6 +36,19 @@ services:
       inner:
         aliases:
           - siliconvalley-express
+  siliconvalley-express-myadmin:
+    container_name: siliconvalley-express-myadmin
+    image: phpmyadmin/phpmyadmin:latest
+    expose:
+      - 80
+    ports:
+      - "80:80"
+    environment:
+        PMA_HOST: siliconvalley-express-db
+    networks:
+      inner:
+        aliases:
+          - siliconvalley-express-myadmin
 networks:
   inner: {}
 volumes:

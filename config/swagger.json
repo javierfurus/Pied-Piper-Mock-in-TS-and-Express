@@ -1,58 +1,94 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Silicon Valley TS"
+    "title": "Silicon Valley TS",
+    "version": "0.5"
   },
-  "schemes": [
-    "http"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
   "paths": {
     "/": {
       "get": {
-        "summary": "Hello World",
-        "operationId": "helloWorld",
+        "tags": ["main"],
+        "summary": "Main Page",
+        "operationId": "mainPage",
         "responses": {
           "200": {
-            "description": "Return with Hello World message"
-          }
-        }
-      }
-    },
-    "/home": {
-      "get": {
-        "summary": "Hello World",
-        "operationId": "helloWorld",
-        "responses": {
-          "200": {
-            "description": "Return with Hello World message"
+            "description": "Return with the main page"
           }
         }
       }
     },
     "/about": {
       "get": {
-        "summary": "Hello World",
-        "operationId": "helloWorld",
+        "tags": ["about"],
+        "summary": "About Page",
+        "operationId": "aboutPage",
         "responses": {
           "200": {
-            "description": "Return with Hello World message"
+            "description": "Return with the About Page"
+          }
+        }
+      }
+    },
+    "/about/{id}": {
+      "get": {
+        "tags": ["card"],
+        "summary": "Find card by ID",
+        "description": "Returns a single pet",
+        "operationId": "getCardById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the card to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "bookmark": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Card not found"
           }
         }
       }
     },
     "/join": {
       "get": {
-        "summary": "Hello World",
-        "operationId": "helloWorld",
+        "tags": ["join"],
+        "summary": "Join Page",
+        "operationId": "joinPage",
         "responses": {
           "200": {
-            "description": "Return with Hello World message"
+            "description": "Return with the join page"
           }
         }
       }

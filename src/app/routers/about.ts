@@ -4,5 +4,6 @@ const router = express.Router({mergeParams: true});
 
 router.use(controller.authorization);
 router.get('/', controller.index);
+router.get('/:id', controller.show);
 
 export { router };
